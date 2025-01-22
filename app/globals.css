@@ -9,8 +9,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #242424;
     --foreground: #ededed;
+  }
+  body {
+    background-color: #808080; /* Grey background for dark mode */
+    color: white; /* Optional: change text color for better contrast */
   }
 }
 
@@ -18,4 +22,16 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.dark-mode {
+    background-color: #808080; /* Grey background for dark mode */
+    color: white; /* Optional: change text color for better contrast */
+}
+
+@media (prefers-color-scheme: dark) {
+    /* Set text color for highlighted markdown characters to black */
+    .markdown-highlight {
+        color: black;
+    }
 }

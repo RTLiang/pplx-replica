@@ -185,7 +185,7 @@ export default function Home() {
               <div
                 className={`${
                   message.role === "assistant"
-                    ? "bg-gray-200 text-gray-900"
+                    ? "bg-gray-300 text-gray-900"
                     : "bg-blue-500 text-white"
                 } rounded-lg p-6 ${
                   message.role === "assistant" ? "max-w-4xl" : "max-w-xl"
