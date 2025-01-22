@@ -25,7 +25,7 @@ const MyLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement> & ExtraProp
   ...props 
 }) => {
   return (
-    <a href={href} {...props}>
+    <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
       {children}
     </a>
   );
@@ -162,7 +162,11 @@ export default function Home() {
   };
 
   const renderers = {
-    a: MyLink,
+    a: ({ children, href, ...props }) => (
+      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+        {children}
+      </a>
+    ),
   } as const;
 
   useEffect(() => {
