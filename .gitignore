@@ -34,12 +34,13 @@ yarn-error.log*
 .env*
 
 # vercel
-<<<<<<< HEAD
-vercel
-=======
 .vercel
->>>>>>> parent of d16cbf5 (remove .vercel in gitigore)
+vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#github
+.github
+github

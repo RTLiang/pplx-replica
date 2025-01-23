@@ -160,9 +160,8 @@ export default function Home() {
       setIsLoading(false);
     }
   };
-
   const renderers = {
-    a: ({ children, href, ...props }) => (
+    a: ({ children, href, ...props }: { children: React.ReactNode; href: string; [key: string]: any }) => (
       <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
         {children}
       </a>
@@ -195,7 +194,17 @@ export default function Home() {
                   message.role === "assistant" ? "max-w-4xl" : "max-w-xl"
                 } prose prose-sm dark:prose-invert`}
               >
-                <ReactMarkdown components={renderers}>{message.content}</ReactMarkdown>
+                <ReactMarkdown
+                  components={{
+                    a: ({ href, children, ...props }) => (
+                      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+                        {children}
+                      </a>
+                    )
+                  }}
+                >
+                  {message.content}
+                </ReactMarkdown>
               </div>
             </div>
           ))}
